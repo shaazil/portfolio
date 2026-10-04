@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+        sans: ['"Space Grotesk"', "system-ui", "-apple-system", "sans-serif"],
+        mono: ['"DM Mono"', "ui-monospace", '"Cascadia Mono"', "Menlo", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +62,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        /* ── Direct-access signal colors ─────────────────── */
+        "racing-orange": "var(--racing-orange)",
+        "powder-blue": "var(--powder-blue)",
+        "live-red": "var(--live-red)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -90,11 +99,20 @@ export default {
             opacity: "0.35",
           },
         },
+        "live-blink": {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.2",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll-dot": "scroll-dot 1.6s ease-in-out infinite",
+        "live-blink": "live-blink 1.4s steps(2) infinite",
       },
     },
   },
